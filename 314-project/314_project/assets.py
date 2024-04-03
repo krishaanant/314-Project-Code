@@ -19,6 +19,10 @@ def make_binary(data, data_col):
     return data
 
 # remove id and smoking status columns Sonia
+@asset
+def remove_cols(data, col_list):
+    data = data.drop(col_list, axis = 1)
+    return data
 
 # filter for adults (> 18) in age column jimin
 
