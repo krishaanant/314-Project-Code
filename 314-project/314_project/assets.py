@@ -7,10 +7,16 @@ def load_data():
     data = pd.read_csv("/workspaces/314-Project-Code/314-project/data/healthcare-dataset-stroke-data.csv")
     return data
 
-@asset
 # remove N/A rows Chloe 
 
 # gender and ever_married columns to binary form (0,1) and remove "other" for gender column Krisha Tim-(pytest)
+@asset
+def make_binary(data, data_col):
+    unique = data[data_col].unique().tolist()
+    for index, value in data[data_col].items():
+        if value in unique:
+            data.at[index, data_col] = unique.index(value)
+    return data
 
 # remove id and smoking status columns Sonia
 
