@@ -7,7 +7,9 @@ def load_data():
     data = pd.read_csv("/workspaces/314-Project-Code/314-project/data/healthcare-dataset-stroke-data.csv")
     return data
 
-# remove N/A rows Chloe 
+#@asset
+# remove N/A rows - Chloe 
+
 @asset
 def drop_na(data):
     newData = data.dropna()
@@ -22,12 +24,16 @@ def make_binary(data, data_col):
             data.at[index, data_col] = unique.index(value)
     return data
 
-# remove id and smoking status columns Sonia
+# remove id and smoking status columns - Sonia
 @asset
 def remove_cols(data, col_list):
     data = data.drop(col_list, axis = 1)
     return data
 
-# filter for adults (> 18) in age column jimin
+# filter for adults (> 18) in age column - Jimin
+@asset
+def filter_adults(data : pd.DataFrame) -> pd.DataFrame:
+    filter = data['age'] >= 18
+    return data[filter]
 
 # ask about to_csv? 
