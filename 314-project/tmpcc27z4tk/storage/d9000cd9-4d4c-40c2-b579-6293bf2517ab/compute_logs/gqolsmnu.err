@@ -1,0 +1,7 @@
+[32m2024-04-04 23:31:00 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - d9000cd9-4d4c-40c2-b579-6293bf2517ab - 39155 - LOGS_CAPTURED - Started capturing logs in process (pid: 39155).
+[32m2024-04-04 23:31:00 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - d9000cd9-4d4c-40c2-b579-6293bf2517ab - 39155 - data - STEP_START - Started execution of step "data".
+[32m2024-04-04 23:31:00 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - d9000cd9-4d4c-40c2-b579-6293bf2517ab - 39155 - data - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+[32m2024-04-04 23:31:00 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - d9000cd9-4d4c-40c2-b579-6293bf2517ab - data - Writing file at: /workspaces/314-Project-Code/314-project/tmpcc27z4tk/storage/data using PickledObjectFilesystemIOManager...
+[32m2024-04-04 23:31:00 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - d9000cd9-4d4c-40c2-b579-6293bf2517ab - 39155 - data - ASSET_MATERIALIZATION - Materialized value data.
+[32m2024-04-04 23:31:00 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - d9000cd9-4d4c-40c2-b579-6293bf2517ab - 39155 - data - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2024-04-04 23:31:00 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - d9000cd9-4d4c-40c2-b579-6293bf2517ab - 39155 - data - STEP_SUCCESS - Finished execution of step "data" in 421ms.

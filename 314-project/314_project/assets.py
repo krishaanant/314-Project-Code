@@ -4,7 +4,7 @@ import pandas as pd
 #test: chloe 
 @asset
 def data():
-    data = pd.read_csv("../data/healthcare-dataset-stroke-data.csv") # cd into 314_project and run python -m assets
+    data = pd.read_csv("/workspaces/314-Project-Code/314-project/data/healthcare-dataset-stroke-data.csv") 
     return data
 
 # remove N/A rows - Chloe 
@@ -15,24 +15,24 @@ def drop_na(data) -> pd.DataFrame:
 
 # gender and ever_married columns to binary form (0,1) and remove "other" for gender column Krisha Tim-(pytest)
 @asset
-def make_binary(data):
+def make_binary(drop_na):
     data_cols = ['gender', 'ever_married']
     for data_col in data_cols:
-        unique = data[data_col].unique().tolist()
-        for index, value in data[data_col].items():
+        unique = drop_na[data_col].unique().tolist()
+        for index, value in drop_na[data_col].items():
             if value in unique:
-                data.at[index, data_col] = unique.index(value)
-    return data
+                drop_na.at[index, data_col] = unique.index(value)
+    return drop_na
 
 # remove id and smoking status columns - Sonia
 @asset
-def remove_cols(data: pd.DataFrame) -> pd.DataFrame:
+def remove_cols(make_binary: pd.DataFrame) -> pd.DataFrame:
     col_list = ["id", "smoking_status"]
-    data = data.drop(col_list, axis = 1)
+    data = make_binary.drop(col_list, axis = 1)
     return data
 
 # filter for adults (> 18) in age column - Jimin
 @asset
-def filter_adults(data : pd.DataFrame) -> pd.DataFrame:
-    filter = data['age'] >= 18
-    return data[filter]
+def filter_adults(remove_cols : pd.DataFrame) -> pd.DataFrame:
+    filter = remove_cols['age'] >= 18
+    return remove_cols[filter]

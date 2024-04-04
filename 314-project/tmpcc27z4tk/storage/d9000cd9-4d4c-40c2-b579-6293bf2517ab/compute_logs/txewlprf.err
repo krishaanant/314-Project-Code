@@ -1,0 +1,11 @@
+[32m2024-04-04 23:31:02 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - d9000cd9-4d4c-40c2-b579-6293bf2517ab - 39278 - LOGS_CAPTURED - Started capturing logs in process (pid: 39278).
+[32m2024-04-04 23:31:02 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - d9000cd9-4d4c-40c2-b579-6293bf2517ab - 39278 - drop_na - STEP_START - Started execution of step "drop_na".
+[32m2024-04-04 23:31:02 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - d9000cd9-4d4c-40c2-b579-6293bf2517ab - drop_na - Loading file from: /workspaces/314-Project-Code/314-project/tmpcc27z4tk/storage/data using PickledObjectFilesystemIOManager...
+[32m2024-04-04 23:31:02 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - d9000cd9-4d4c-40c2-b579-6293bf2517ab - 39278 - drop_na - ASSET_OBSERVATION - ASSET_OBSERVATION for step drop_na
+[32m2024-04-04 23:31:02 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - d9000cd9-4d4c-40c2-b579-6293bf2517ab - 39278 - drop_na - LOADED_INPUT - Loaded input "data" using input manager "io_manager", from output "result" of step "data"
+[32m2024-04-04 23:31:02 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - d9000cd9-4d4c-40c2-b579-6293bf2517ab - 39278 - drop_na - STEP_INPUT - Got input "data" of type "Any". (Type check passed).
+[32m2024-04-04 23:31:03 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - d9000cd9-4d4c-40c2-b579-6293bf2517ab - 39278 - drop_na - STEP_OUTPUT - Yielded output "result" of type "DataFrame". (Type check passed).
+[32m2024-04-04 23:31:03 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - d9000cd9-4d4c-40c2-b579-6293bf2517ab - drop_na - Writing file at: /workspaces/314-Project-Code/314-project/tmpcc27z4tk/storage/drop_na using PickledObjectFilesystemIOManager...
+[32m2024-04-04 23:31:03 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - d9000cd9-4d4c-40c2-b579-6293bf2517ab - 39278 - drop_na - ASSET_MATERIALIZATION - Materialized value drop_na.
+[32m2024-04-04 23:31:03 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - d9000cd9-4d4c-40c2-b579-6293bf2517ab - 39278 - drop_na - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2024-04-04 23:31:03 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - d9000cd9-4d4c-40c2-b579-6293bf2517ab - 39278 - drop_na - STEP_SUCCESS - Finished execution of step "drop_na" in 335ms.
