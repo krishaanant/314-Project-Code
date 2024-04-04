@@ -8,6 +8,10 @@ def load_data():
     return data
 
 # remove N/A rows Chloe 
+@asset
+def drop_na(data):
+    newData = data.dropna()
+    return newData
 
 # gender and ever_married columns to binary form (0,1) and remove "other" for gender column Krisha Tim-(pytest)
 @asset
