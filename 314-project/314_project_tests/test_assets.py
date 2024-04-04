@@ -1,4 +1,4 @@
-from 314_project import assets
+from 314_project import assets # cd into 314_project and run pytest -m ../314_project_tests/test_assets
 import os
 import pandas as pd
 

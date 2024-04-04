@@ -4,7 +4,7 @@ import pandas as pd
 #test: chloe 
 @asset
 def load_data():
-    data = pd.read_csv("/workspaces/314-Project-Code/314-project/data/healthcare-dataset-stroke-data.csv")
+    data = pd.read_csv("../data/healthcare-dataset-stroke-data.csv") # cd into 314_project and run python -m assets
     return data
 
 #@asset
