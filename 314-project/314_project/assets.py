@@ -3,30 +3,31 @@ import pandas as pd
 
 #test: chloe 
 @asset
-def load_data():
+def data():
     data = pd.read_csv("../data/healthcare-dataset-stroke-data.csv") # cd into 314_project and run python -m assets
     return data
 
-#@asset
 # remove N/A rows - Chloe 
-
 @asset
-def drop_na(data):
+def drop_na(data) -> pd.DataFrame:
     newData = data.dropna()
     return newData
 
 # gender and ever_married columns to binary form (0,1) and remove "other" for gender column Krisha Tim-(pytest)
 @asset
-def make_binary(data, data_col):
-    unique = data[data_col].unique().tolist()
-    for index, value in data[data_col].items():
-        if value in unique:
-            data.at[index, data_col] = unique.index(value)
+def make_binary(data):
+    data_cols = ['gender', 'ever_married']
+    for data_col in data_cols:
+        unique = data[data_col].unique().tolist()
+        for index, value in data[data_col].items():
+            if value in unique:
+                data.at[index, data_col] = unique.index(value)
     return data
 
 # remove id and smoking status columns - Sonia
 @asset
-def remove_cols(data, col_list):
+def remove_cols(data: pd.DataFrame) -> pd.DataFrame:
+    col_list = ["id", "smoking_status"]
     data = data.drop(col_list, axis = 1)
     return data
 
@@ -35,5 +36,3 @@ def remove_cols(data, col_list):
 def filter_adults(data : pd.DataFrame) -> pd.DataFrame:
     filter = data['age'] >= 18
     return data[filter]
-
-# ask about to_csv? 
