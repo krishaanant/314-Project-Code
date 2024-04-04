@@ -10,6 +10,21 @@ def test_drop_na():
 # make a sample data frame with some null values and assert after running drop_na it is correct
     pass
 
+
+def test_make_binary():
+# make a sample data frame with gender and ever_married columns and 
+# assert after running make_binary that the columns are in fact binary 
+# and the "Other" gender feature is removed
+    data = pd.DataFrame({"gender" : ['Male', 'Female', 'Other'], 
+                         "ever_married": ["Yes", "No", "Yes"], 
+                         "stroke" : [0, 1, 1]})
+    data_op1 = assets.make_binary(data, "gender")
+    data_op2 = assets.make_binary(data_op1, "ever_married")
+    data_bin = pd.DataFrame({"gender" : [1, 0], 
+                         "ever_married": [1, 0], 
+                         "stroke" : [0, 1]})
+    pd.testing.assert_frame_equal(data_op2, data_bin)
+
 def test_remove_cols():
     data = pd.DataFrame({"id" : [10], "smoking": ["yes"], "age" : [18], "gender" : [1]})
     list = ["age", "smoking"]
