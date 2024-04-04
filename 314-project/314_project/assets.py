@@ -14,6 +14,7 @@ def drop_na(data) -> pd.DataFrame:
     return newData
 
 # gender and ever_married columns to binary form (0,1) and remove "other" for gender column Krisha Tim-(pytest)
+
 @asset
 def make_binary(drop_na):
     data_cols = ['gender', 'ever_married']
@@ -21,7 +22,8 @@ def make_binary(drop_na):
         unique = drop_na[data_col].unique().tolist()
         for index, value in drop_na[data_col].items():
             if value in unique:
-                drop_na.at[index, data_col] = unique.index(value)
+                drop_na.at[index, data_col] = int(unique.index(value))
+        drop_na[data_col] = drop_na[data_col].astype(int)
     return drop_na
 
 # remove id and smoking status columns - Sonia
