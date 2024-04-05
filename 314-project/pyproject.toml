@@ -1,6 +1,7 @@
 [project]
 dependencies = [
-    "pandas>=2.2.0"
+    "pandas>=2.2.0",
+    "kaggle>=1.6.8"
 ]
 
 [build-system]
