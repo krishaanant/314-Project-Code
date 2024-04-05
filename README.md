@@ -12,4 +12,4 @@ Jimin - filter_adults(), test_filter_adults()
 
 Tim - test_make_binary()
 
-All - brainstorming assets, set up Dagster, data(), debugging
+All - brainstormed assets, set up Dagster, data(), debugged
