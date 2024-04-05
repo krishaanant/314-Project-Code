@@ -1,10 +1,21 @@
 from dagster import asset
 import pandas as pd
+from kaggle.api.kaggle_api_extended import KaggleApi
 
+'''
 #test: chloe 
 @asset
 def data():
     data = pd.read_csv("/workspaces/314-Project-Code/314-project/data/healthcare-dataset-stroke-data.csv") 
+    return data
+'''
+
+@asset
+def data():
+    api = KaggleApi()
+    api.authenticate()
+    api.dataset_download_file('fedesoriano/stroke-prediction-dataset', file_name = 'healthcare-dataset-stroke-data.csv')
+    data = pd.read_csv('healthcare-dataset-stroke-data.csv')
     return data
 
 # remove N/A rows - Chloe 
